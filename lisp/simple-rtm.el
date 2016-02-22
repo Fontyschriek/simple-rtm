@@ -22,7 +22,7 @@
 ;; GNU General Public License for more details.
 
 (require 'rtm)
-(require 'pp)
+;; (require 'pp)
 (require 'cl)
 
 (defgroup simple-rtm nil
