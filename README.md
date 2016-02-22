@@ -76,6 +76,7 @@ Known issues
 * Smart lists don't work yet. Therefore they're not shown.
 * Repeating tasks are completely untested and unsupported.
 * Tag tab completion only works with smart-add, not when editing them afterward.
+* Subtasks arne't supported.
 
 Planned features
 ----------------
