@@ -5,7 +5,7 @@
 ;; Author: Moritz Bunkus <morit@bunkus.org>
 ;; Created: April 3, 2011
 ;; Version: 0.3
-;; Package-Requires: ((rtm "0.1"))
+;; Package-Requires: ((rtm "0.1")(dash "2.0.0"))
 ;; Keywords: remember the milk productivity todo
 
 ;; This product uses the Remember The Milk API but is not endorsed or
@@ -22,6 +22,7 @@
 ;; GNU General Public License for more details.
 
 (require 'rtm)
+(require 'dash)
 ;; (require 'pp)
 (require 'cl)
 
@@ -1215,7 +1216,10 @@ calling `simple-rtm-reload'."
   (interactive)
   (with-current-buffer (simple-rtm--buffer)
     (unless simple-rtm-lists
-      (setq simple-rtm-lists (rtm-lists-get-list)))
+      (setq simple-rtm-lists (--remove (or (string= "1" (xml-get-attribute it 'archived))
+                                           (string= "1" (xml-get-attribute it 'deleted))
+                                           (string= "1" (xml-get-attribute it 'smart)))
+                                       (rtm-lists-get-list))))
     (unless simple-rtm-locations
       (simple-rtm--load-locations))
     (setq simple-rtm-tasks (rtm-tasks-get-list nil "status:incomplete"))

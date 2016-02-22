@@ -1,7 +1,7 @@
 SimpleRTM - Interactive Emacs mode for Remember The Milk
 ========================================================
 
-&copy; 2011-2012 Moritz Bunkus &lt;moritz@bunkus.org&gt;<br>
+&copy; 2011-2016 Moritz Bunkus &lt;moritz@bunkus.org&gt;<br>
 &copy; 2010 Seth Mason &lt;seth@sethmason.com&gt; (for slack-rtm.el)<br>
 &copy; 2009 Friedrich Delgado Friedrichs (for rtm.el)
 
@@ -73,7 +73,7 @@ SimpleRTM.
 Known issues
 ------------
 
-* Smart lists don't work yet.
+* Smart lists don't work yet. Therefore they're not shown.
 * Repeating tasks are completely untested and unsupported.
 * Tag tab completion only works with smart-add, not when editing them afterward.
 
